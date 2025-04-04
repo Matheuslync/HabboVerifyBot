@@ -1,4 +1,16 @@
 # Habbo Discord Verification Bot
+
+HabboVerifyBot is a Discord verification bot that allows server administrators to verify if users are legitimate Habbo Hotel players. The bot works by generating a unique verification code that users must set as their Habbo motto. Once verified, users receive a special role in the Discord server.
+
+### Key Features:
+- Secure verification process using unique codes
+- Automatic role assignment for verified users
+- Customizable verification messages
+- User-friendly commands for verification management
+- Visual confirmation with custom generated images
+- Multi-language support through customizable messages
+This bot helps Habbo community Discord servers maintain authenticity by ensuring members are actual Habbo players, reducing the risk of spam accounts and enhancing community trust.
+
 ## Requirements
 
 - Python 3.8 or higher
