@@ -1,0 +1,30 @@
+{
+    "bot": {
+        "online": "{bot_name} is online!",
+        "id": "ID: {bot_id}"
+    },
+    "verify": {
+        "no_username": "{mention} You need to provide your Habbo username. Example: `{prefix}{command} YourHabboUser`",
+        "already_in_progress": "{mention} You already have a verification in progress. Use `{prefix}cancel` to cancel.",
+        "instructions": "{mention} Starting verification for Habbo user **{habbo_user}**\n\n**Instructions:**\n1. Access your Habbo account\n2. Change your motto to: `{code}`\n3. Wait for automatic verification\n\nVerification will expire in {expiration_minutes} minutes. Use `{prefix}cancel` to cancel the process."
+    },
+    "verification_process": {
+        "user_not_found": "{mention} Could not find user **{habbo_user}** on Habbo. Please check if the name is correct or if the profile is open for public viewing.",
+        "bot_no_permission": "{mention} Error: Bot doesn't have permission to manage roles. Please ask an administrator to give the 'Manage Roles' permission to the bot.",
+        "role_hierarchy_error": "{mention} Error: The '{role_name}' role is above the bot's highest role. Please ask an administrator to move the bot's role above the '{role_name}' role.",
+        "role_assign_error": "{mention} Error: Could not assign role. Please check if the bot has the necessary permissions and if the bot's role is above the '{role_name}' role.",
+        "success_with_nickname": "{mention} Verification completed successfully! Your nickname has been changed to **{habbo_user}**.",
+        "success": "{mention} Verification completed successfully!",
+        "error": "{mention} Error assigning role: {error}",
+        "expired": "{mention} Verification time expired. Use `{prefix}{command} {habbo_user}` to try again."
+    },
+    "cancel": {
+        "success": "{mention} Your verification has been cancelled.",
+        "no_verification": "{mention} You don't have any verification in progress."
+    },
+    "restart": {
+        "in_progress": "{mention} Restarting verification for user **{habbo_user}**...",
+        "instructions": "{mention} Restarting verification for Habbo user **{habbo_user}**\n\n**Instructions:**\n1. Access your Habbo account\n2. Change your motto to: `{code}`\n3. Wait for automatic verification (we check every {interval} seconds)\n\nVerification will expire in {expiration_minutes} minutes. Use `{prefix}cancel` to cancel the process.",
+        "no_verification": "{mention} You don't have any verification in progress to restart."
+    }
+}
