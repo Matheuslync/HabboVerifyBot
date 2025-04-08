@@ -167,11 +167,8 @@ async def verification_process(ctx, user_id, habbo_user, code):
                 habbo_user=habbo_user
             )
             
-            # Edit existing message instead of sending a new one
-            if status_message:
-                await status_message.edit(content=formatted_msg)
-            else:
-                status_message = await ctx.send(formatted_msg)
+            # Enviar como nova mensagem em vez de editar a existente
+            await ctx.send(formatted_msg)
             
             if user_id in active_verifications:
                 del active_verifications[user_id]
@@ -199,10 +196,8 @@ async def verification_process(ctx, user_id, habbo_user, code):
                         mention=ctx.author.mention
                     )
                     
-                    if status_message:
-                        await status_message.edit(content=formatted_msg)
-                    else:
-                        await ctx.send(formatted_msg)
+                    # Enviar como nova mensagem em vez de editar a existente
+                    await ctx.send(formatted_msg)
                     return
 
                 # Check role hierarchy
@@ -214,10 +209,8 @@ async def verification_process(ctx, user_id, habbo_user, code):
                         role_name=VERIFIED_ROLE
                     )
                     
-                    if status_message:
-                        await status_message.edit(content=formatted_msg)
-                    else:
-                        await ctx.send(formatted_msg)
+                    # Enviar como nova mensagem em vez de editar a existente
+                    await ctx.send(formatted_msg)
                     return
 
                 # Assign role
@@ -232,10 +225,8 @@ async def verification_process(ctx, user_id, habbo_user, code):
                         role_name=VERIFIED_ROLE
                     )
                     
-                    if status_message:
-                        await status_message.edit(content=formatted_msg)
-                    else:
-                        await ctx.send(formatted_msg)
+                    # Enviar como nova mensagem em vez de editar a existente
+                    await ctx.send(formatted_msg)
                     return
                 
                 # Create custom image
@@ -301,11 +292,8 @@ async def verification_process(ctx, user_id, habbo_user, code):
                     error=str(e)
                 )
                 
-                # Edit existing message instead of sending a new one
-                if status_message:
-                    await status_message.edit(content=formatted_msg)
-                else:
-                    status_message = await ctx.send(formatted_msg)
+                # Enviar como nova mensagem em vez de editar a existente
+                await ctx.send(formatted_msg)
                 
                 if user_id in active_verifications:
                     del active_verifications[user_id]
@@ -325,10 +313,8 @@ async def verification_process(ctx, user_id, habbo_user, code):
             habbo_user=result['exact_name']
         )
         
-        if status_message:
-            await status_message.edit(content=formatted_msg)
-        else:
-            await ctx.send(formatted_msg)
+        # Enviar como nova mensagem em vez de editar a existente
+        await ctx.send(formatted_msg)
         
         del active_verifications[user_id]
 
@@ -355,12 +341,8 @@ async def verify(ctx, habbo_user=None):
             prefix=PREFIX
         )
         
-        # Edit existing message instead of sending a new one
-        existing_message = active_verifications[user_id].get('message')
-        if existing_message:
-            await existing_message.edit(content=formatted_msg)
-        else:
-            await ctx.send(formatted_msg)
+        # Enviar como nova mensagem em vez de editar a existente
+        await ctx.send(formatted_msg)
         return
     
     # Generate verification code
@@ -408,7 +390,7 @@ async def cancel(ctx):
             mention=ctx.author.mention
         )
         
-        # Edit existing message or send a new one
+        # Edit existing message or send a new one (mantendo o comportamento original para mensagens de sucesso)
         if existing_message:
             await existing_message.edit(content=formatted_msg)
         else:
